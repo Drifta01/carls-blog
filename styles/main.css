@@ -1,135 +1,219 @@
 * {
-  border: 1px dashed rgb(46, 212, 0);
+  /* border: 1px dashed red; */
   box-sizing: border-box;
+}
+
+#pinkyImage {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  z-index: 100;
+  font-size: 50px;
+}
+
+#pinkyimg::after{
+position: absolute;
+}
+
+
+:root {
+  --light-gray: rgb(214, 214, 214);
+}
+
+body {
+  margin: 0;
+  color: #1f1f1f;
 }
 
 html {
   height: 100%;
 }
 
-body {
-  margin: auto;
-  background-color: rgb(255, 255, 255);
-  font-weight: 500;
-  font-family: Raleway;
-  display: grid;
-  grid-template-areas:
-    "header header"
-    "main aside"
-    "footer footer";
-  grid-template-rows: 200px 1fr 150px;
-  grid-template-columns: 70% 1fr;
-  max-width: 1200px;
-  min-height: 100%;
-}
-
-main {
-  grid-area: main;
-  padding: 2.5rem;
-  position: relative;
-  background-color: rgb(255, 255, 255);
-}
-
-h1 {
-  font-size: 72px;
-  color: rgb(213, 213, 213);
+.center {
   text-align: center;
 }
 
-.article {
-  padding: 0 1rem 1rem 1rem;
-  border: 1px solid rgb(218, 218, 218);
-  box-shadow: 0px 5px 5px rgb(213, 212, 212);
-  border-radius: 10px;
-}
-
-.card-heading {
-  font-family: Montserrat;
-  font-size: 20px;
-  color: rgb(0, 0, 0);
-  padding: px 1rem;
-}
-
-.card > * {
-  width: 100%;
-}
-
-.card-text {
-  display: grid;
-  font-size: 15px;
-}
-
-.card-img {
-  max-width: 100%;
-  max-height: 220px;
-  object-fit: contain;
+#pinkyImg {
+  visibility: hidden;
+  display: none;
 }
 
 #header {
   display: flex;
-  grid-area: header;
-
-  background-image: url("../img/header1.jpg");
+  flex-direction: column;
+  background: linear-gradient(190deg, #1f1f1fec 0%, rgba(121, 3, 121, 0.955) 70%), url(https://grainy-gradients.vercel.app/noise.svg);
+  background-color: #1f1f1f;
   background-position: center;
-
+  background-repeat: no-repeat;
+  background-size: cover;
   justify-content: center;
   align-items: center;
-  position: relative;
+  max-height: 200px;
+  height: 200px;
+  padding-bottom: 1rem;
 }
 
-.card-button {
-  line-height: 2rem;
-  justify-self: center;
-  border-radius: 10px;
-  padding: 0.5rem;
-  color: rgb(225, 223, 228);
-  border: solid;
-  border-width: 1px;
-  background-color: #3a4a62;
-  display: block;
-  width: 180px;
-  font-size: 2.5rem;
-  text-decoration: none;
+#header h1 {
+  font-family: "Raleway", sans-serif;
+  font-style: bold;
+  font-size: 100px;
+  line-height: 100px;
+  padding: 0;
+  margin: 0;
+  color: white;
   text-align: center;
+  filter: drop-shadow(4px 4px 4px rgb(0, 0, 0));
+  position: relative;
+
+  /* filter: drop-shadow(0px 0px 10px rgb(0, 140, 255)); */
+}
+
+#header h3 {
+  font-family: "Berkshire Swash", serif;
+  font-style: normal;
+  font-size: 45px;
+  line-height: 30px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  padding: 0;
+  margin: 0;
+  color: #92fe04e2;
+  filter: drop-shadow(2px 3px 2px rgb(0, 0, 0));
+}
+
+#top-banner {
+  text-align: center;
+  display: block;
+  display: flex;
+  gap: 4rem;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: center;
+  background-color: #576f93;
+}
+
+#top-banner img {
+  border-radius: 5px;
+  mask-border-mode: luminance;
+  height: 150px;
+  background-color: white;
+}
+
+#container {
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-family: Raleway;
+  display: grid;
+  grid-template-areas: "main aside";
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 22%;
+  max-width: 1200px;
+}
+
+main {
+  grid-area: main;
+  min-height: 100%;
+  border-left: 1px solid var(--light-gray);
 }
 
 #section {
   display: grid;
   gap: 2.5rem;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr 1fr;
-}
-.side-img {
-  border: solid;
-  border-color: gray;
-  border-width: 5px;
-  box-shadow: 4px 4px;
+  padding: 2.5rem;
+  padding-top: 3rem;
+  grid-template-columns: 50% 1fr;
 }
 
-#aside {
-  display: grid;
+aside {
+  padding-top: 3rem;
   grid-area: aside;
-  border-left: 1px solid rgb(255, 255, 255);
-  color: rgb(0, 1, 1);
-  /* width: ; */
-  background-color: rgb(255, 255, 255);
-  justify-content: space-around;
+  text-transform: capitalize !important;
+  font-family: Montserrat;
+  border-right: 2px solid var(--light-gray);
+  border-left: 1px solid var(--light-gray);
 }
-#footer {
-  /* border:dashed rgb(13, 241, 36) 2px; */
-  margin-top: auto;
-  display: grid;
-  height: 100px;
-  background-color: rgb(0, 0, 0);
-  grid-area: footer;
+
+#post-article {
+  padding: 0;
+}
+
+.card:hover {
+  scale: 102%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid var(--light-gray);
+  padding-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 0px 10px var(--light-gray);
+  transition: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+  cursor: pointer;
+}
+
+.card-heading {
+  font-family: Montserrat !important;
+  font-weight: 600;
+  display: block;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  color: rgb(0, 0, 0);
+  padding: 0.25rem 1rem 0 1rem;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 1rem;
+  padding: 0rem 1.2rem 1.5rem 1rem;
+  font-weight: 400;
+  display: block;
+}
+
+.card-img {
+  width: 100%;
+  mask-border-mode: alpha;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  max-height: 300px;
+  min-height: 300px;
+  object-position: top;
+  object-fit: cover;
+}
+
+.card-button {
+  line-height: 2rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  color: white;
+  border: solid;
+  border-color: #3a4a62;
+  border-width: 2px;
+  background-color: #3a4a62;
+  width: 90%;
+  font-size: 2.5rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
 }
 
 .card-button:hover {
   filter: brightness(1.5);
 }
 
-.link:hover {
-  background-color: rgb(112, 112, 112);
+#footer {
+  min-height: 150px;
+  height: 150px;
+  background-color: #eaeaea;
 }
 
 @media all and (max-width: 800px) {
@@ -152,7 +236,7 @@ h1 {
     font-size: 3rem;
   }
 
-  #section {
+  #article-section {
     display: grid;
     gap: 2.5rem;
     grid-template-rows: auto;
@@ -180,7 +264,6 @@ h1 {
   #aside {
     grid-area: aside;
     border-left: 1px solid rgb(231, 231, 231);
-
     background-color: white;
   }
 
